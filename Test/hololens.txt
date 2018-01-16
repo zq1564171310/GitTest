@@ -1,0 +1,87 @@
+﻿Unity学习网站
+http://blog.csdn.net/husheng0/article/details/46785593
+
+
+
+
+第一课
+微软Hololens是一款由MR技术全息成像的智能眼睛设备，属于次世代科技，在未来有着代替移动端的巨大的潜力。 
+
+AR增强现实 将真实场景与虚拟物体的叠加方式  靠摄像头捕捉现实画面作为背景板放置在虚拟物体后方
+
+MR混合现实 将真实场景与虚拟物体的叠加方式  将虚拟物体通过坐标定位在透镜中叠加进去。
+     
+AR增强现实 程序内部识别的尺寸 有识别图的情况：通过识别图大小定义相对尺寸
+                              无识别图的情况：根据虚拟物体与摄像机的距离定义视觉尺寸
+
+MR增强现实 程序内部识别的尺寸  真是的尺寸       
+           MR技术记录了空间的信息  在程序中真实的记录虚拟物体与现实物体之间的距离，
+                                   物体的大小是固定的 有各自明确的尺寸 可以根据物体
+                                   的尺寸来定义一些互动内容，比如说你有一个虚拟的人物，
+                                   可以通过AI的设计让人物在场景中选择适合的位置坐下来。
+
+                                  （比如说沙发，在AR中通过图片是无法判断它的高度，宽度，
+                                   及距离的， 但是在MR中，只要你前期扫描过这个地方，那么
+                                   这个沙发无论它在你的视野中呈现的角度是怎样的或者它根本
+                                   就不存在你的视野之中，那么虚拟人物都可以寻找到这个目
+                                   标并且坐下来。）
+                                   
+                                   而且，MR中如果出现识别图的话，那么它不仅仅识别的是图像
+                                   画面，而是真正的一个有大小的图片，如果图片大小跟预期的
+                                   不同，就会出现错乱。
+                                   
+MR技术的应用与发展
+   1.从游戏上讲，MR可以开发更多的定制化的互动内容，根据所处的环境本身的建筑结构以及物品
+     摆放来产生一些特殊交互操作
+   2.在维修上，美国的电梯维修开始采用Hololens
+   3.设计中，沃尔沃汽车设计也在使用Hololens
+   4.医学上，美国杜克大学采用Hololens进行一个脑部手术的引导，以减少大脑盲区所造成的风险。
+
+
+
+
+第二课 
+    Hololens Emulator （hololens模拟器）建议新手不要太依赖模拟器，以真机为准。
+  开发熟练后可以用虚拟机做些功能测试。
+
+使用到的辅助工具：
+                1.HoloToolkit-Unity   2.VuforiaSDK
+  VuforiaSDK : 之前被称作高通SDK，高通大家应该比较了解一些，是手机处理器的供应商，后来
+               高通公司把Vuforia的业务卖给了美国参数公司，工业设计软件ProE就是美国参数
+               公司旗下的一个产品，美国参数公司在很大程度上引导着工业4.0的进程，而其中
+               Vuforia项目未来的规划主体就是服务于工业4.0.
+
+  起码现在看来 微软，Vuforia,Unity这三个BOSS强强联手共同打造Hololens开发的生态环境。
+那么Hololens的话，他的未来是一片光明的。
+  
+   官方推荐最近渲染距离（clipping Planes  Near)是0.85
+   发布：
+   还需调整质量：Edit--Project Settings--Quality   然后在Inspector面板Quality Settings
+里面调整为Fastest最快运行。   打开发布配置Build Settings, Platform选择Windows Store--SDK选择
+Universal 10--Build and Run on选择LocalMachine;    设置Player Settings  将Virial Reality 
+Surported勾选，然后选择Windows Holographic.     然后，点击Build--选择一个文件夹，会生成
+一个VS工程文件，打开其中.sln文件，VS中选86，有真机选远程计算机，无真机选模拟器。
+
+
+ Input 目录 
+ GazeManager.cs 用于快速集成凝视射线特性； 
+ GestureManager.cs 用于快速集成手势识别特性； 
+ KeywordManager.cs 用于快速集成语音命令特性； 
+ CursorManager.cs 用于快速集成可视化凝视组件。 
+ Sharing 目录 
+ Sharing Prefab 组件用于快速集成场景共享特性。 
+ SpatialMapping 目录 
+ SurfacePlane Prefab 组件用于描述和渲染真实世界表面； 
+ SpatialMapping Prefab 组件用于快速集成空间映射特性； 
+ RemoteMapping Prefab 组件用于快速集成远程空间映射信息导入特性； 
+ SpatialSound 目录 
+ UAudioManager.cs 用于快速集成空间声音特性。 
+ Utilities 目录 
+ Billboard.cs 用于实现跟随用户视线特性； 
+ Tagalong.cs 用于实现跟随用户移动特性； 
+ Main Camera Prefab组件用于快速集成 HoloLens 标准主摄像机。
+
+
+
+
+
